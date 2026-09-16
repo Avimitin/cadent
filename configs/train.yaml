@@ -1,0 +1,25 @@
+# Run paths are relative to the repository working directory.
+model_name_or_path: Qwen/Qwen3-1.7B
+revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+train_data: data/processed/train.jsonl
+validation_data: data/processed/validation.jsonl
+output_dir: outputs/qwen3-itg-lora
+device: cuda
+load_in_4bit: false
+max_length: 4096
+epochs: 3
+learning_rate: 0.0002
+batch_size: 1
+eval_batch_size: 1
+gradient_accumulation_steps: 16
+gradient_checkpointing: true
+warmup_ratio: 0.03
+weight_decay: 0.01
+logging_steps: 10
+seed: 42
+lora:
+  r: 8
+  lora_alpha: 16
+  lora_dropout: 0.05
+  target_modules: [q_proj, v_proj, k_proj, o_proj]
+  bias: none

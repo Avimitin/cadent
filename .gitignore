@@ -1,0 +1,15 @@
+.venv/
+.direnv/
+.cache/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+data/
+models/
+checkpoints/
+outputs/
+wandb/
+result
+result-*
